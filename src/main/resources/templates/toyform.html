@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Toy Form</title>
+</head>
+<body>
+<form action="#" th:action="@{/addmethod}" th:object="${toy}" method="post">
+    <input type="hidden" value="*{id}">
+    <label for="brand">Enter brand: </label><input type="text" th:field="*{brand}" /><br/>
+    <label for="model">Enter model: </label><input type="text" th:field="*{model}" /><br/>
+    <label for="date of manufacture">Enter date of manufacture: </label><input type="date" th:field="*{dateOfManufacture}" /><br/>
+    <label for="in stock">Enter if in stock: </label><input type="text" th:field="*{inStock}" /><br/>
+    <button type="submit">Submit</button>
+</form>
+</body>
+</html>

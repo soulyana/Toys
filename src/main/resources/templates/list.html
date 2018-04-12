@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Toys List</title>
+</head>
+<body>
+
+<h1>Toys</h1>
+<div th:each="eachToy:${toys}">
+    <p th:text="${eachToy.brand}"></p>
+    <p th:text="${eachToy.model}"></p>
+    <!--Error displaying: Validation failed for object='toy'.-->
+    <!--<p th:text="${#dates.format(eachToy.dateOfManufacture, 'dd-MMM-yyyy')}"></p>-->
+    <p th:text="${#temporals.format(eachToy.dateOfManufacture, 'MM-yyyy')}"></p>
+    <!--<p th:text="${eachToy.dateOfManufacture}"></p>-->
+    <p th:text="${eachToy.inStock}"></p>
+</div>
+</body>
+</html>
